@@ -18,7 +18,7 @@ function taxaDeVitorias(vitorias, derrotas) {
       nivel = "Diamante";
     } else if (vitorias >= 91 && vitorias <= 100) {
       nivel = "Lendário";
-    } else {
+    } else if (vitorias >= 100) {
       nivel = "Imortal";
     }
   
