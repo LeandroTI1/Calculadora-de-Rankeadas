@@ -1,26 +1,32 @@
-function partidas(vitorias, derrotas){
-    let taxaDeVitórias = prompt("Digite o número de vitórias:");
-let porcentagemDeVitórias = parseInt(prompt("Digite a quantidade de vitórias:"));
-
-// Utiliza estrutura de decisão para determinar o nível do herói
-let taxaDeVitorias;
-
-if (porcentagemDeVitorias < 10) {
-    taxaDeVitorias = "Ferro";
-} else if (porcentagemDeVitorias >= 11 && porcentagemDeVitórias <= 20) {
-    taxaDeVitorias= "Bronze";
-} else if (porcentagemDeVitorias >= 21 && porcentagemDeVitórias <= 50) {
-    taxaDeVitorias = "Prata";
-} else if (porcentagemDeVitorias >= 51 && porcentagemDeVitórias <= 80) {
-    taxaDeVitorias = "Ouro";
-} else if (porcentagemDeVitorias >= 81 && porcentagemDeVitórias <= 90) {
-    taxaDeVitorias = "Diamante";
-} else if (porcentagemDeVitorias >= 91 && porcentagemDeVitórias <= 100) {
-    taxaDeVitorias = "Lendário";
-} else if (porcentagemDeVitorias >= 101) {
-    taxaDeVitorias = "Imortal";
-} 
-}
-// Exibe a mensagem final
-console.log("o porcentual de vitórias é + porcentualDeVitorias com  taxas de + taxasDeVitorias");
+//taxa de vitórias subtraindo as vitórias com as derrotas.
+function taxaDeVitorias(vitorias, derrotas) {
+    // Calcula o resultado das Rankeadas
+    const totalDeVitorias = vitorias - derrotas;
+  
+    // Verifica o nível de vitórias
+    let nivel;
+  
+    if (vitorias < 10) {
+      nivel = "Ferro";
+    } else if (vitorias >= 11 && vitorias <= 20) {
+      nivel = "Bronze";
+    } else if (vitorias >= 21 && vitorias <= 50) {
+      nivel = "Prata";
+    } else if (vitorias >= 51 && vitorias <= 80) {
+      nivel = "Ouro";
+    } else if (vitorias >= 81 && vitorias <= 90) {
+      nivel = "Diamante";
+    } else if (vitorias >= 91 && vitorias <= 100) {
+      nivel = "Lendário";
+    } else {
+      nivel = "Imortal";
+    }
+  
+    // Retorna o resultado da taxa de vitórias e seu nível.
+    return `O Herói tem um saldo de ${totalDeVitorias} está no nível de ${nivel}`;
+  }
+  
+  // Exemplo de uso da função
+  const totalDeVitorias = taxaDeVitorias(30, 10);
+  console.log(totalDeVitorias);
 
